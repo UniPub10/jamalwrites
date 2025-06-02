@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Preview</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <h2>Preview</h2>
+  <iframe id="pdfFrame" width="100%" height="800px"></iframe>
+  <a href="contact.html" class="btn">Contact My Manager</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+    if (file) {
+      document.getElementById("pdfFrame").src = "pdfs/" + file + "#page=1&zoom=100";
+    }
+  </script>
+</body>
+</html>
